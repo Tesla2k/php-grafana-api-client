@@ -18,6 +18,7 @@ use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
 use Saschahemleb\PhpGrafanaApiClient\Api\Admin;
 use Saschahemleb\PhpGrafanaApiClient\Api\Datasource;
+use Saschahemleb\PhpGrafanaApiClient\Api\Dashboard;
 use Saschahemleb\PhpGrafanaApiClient\Api\Organization;
 use Saschahemleb\PhpGrafanaApiClient\Api\Other;
 use Saschahemleb\PhpGrafanaApiClient\Api\Team;
@@ -93,6 +94,11 @@ class Client
     public function datasource(): Datasource
     {
         return $this->createApi(Datasource::class);
+    }
+
+    public function dashboard(): Dashboard
+    {
+        return $this->createApi(Dashboard::class);
     }
 
     protected function __construct(
